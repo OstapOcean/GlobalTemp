@@ -1,0 +1,117 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *\
+|* СТАНДАРТНЫЙ ЭЛЕМЕНТ СКРЫТИЯ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *|
+\* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.hidden-info {
+	
+	// ПЕРЕМЕННЫЕ
+
+	/*$check: 1;
+	@function check($fun)
+	{
+		@if $check == 1
+		{
+			@return $fun: $lol;
+		}
+	}*/
+	
+	$lrg-tran-hidden-info-button-color: color 0.1s linear;
+
+	$lrg-tran-hidden-content-height: height 2s ease;
+
+	$lrg-line-color: $color-first;
+	$lrg-line-color-basic:  map-get($lrg-line-color, basic);
+	$lrg-line-color-hover:  map-get($lrg-line-color, hover);
+	$lrg-line-color-active: map-get($lrg-line-color, active);
+	$lrg-line-color-focus:  map-get($lrg-line-color, focus);
+	$lrg-line-color-faded:  map-get($lrg-line-color, faded);
+	
+	$lrg-button-font-color: $color-first;
+	$lrg-button-font-color-basic:  map-get($lrg-button-font-color, basic);
+	$lrg-button-font-color-hover:  map-get($lrg-button-font-color, hover);
+	$lrg-button-font-color-active: map-get($lrg-button-font-color, active);
+	$lrg-button-font-color-focus:  map-get($lrg-button-font-color, focus);
+	$lrg-button-font-color-faded:  map-get($lrg-button-font-color, faded);
+
+	$lrg-button-background-color: $color-second;
+	$lrg-button-background-color-basic:  map-get($lrg-button-background-color, basic);
+	$lrg-button-background-color-hover:  map-get($lrg-button-background-color, hover);
+	$lrg-button-background-color-active: map-get($lrg-button-background-color, active);
+	$lrg-button-background-color-focus:  map-get($lrg-button-background-color, focus);
+	$lrg-button-background-color-faded:  map-get($lrg-button-background-color, faded);
+	
+	width: 100%;
+	margin-bottom: 5px;
+	position: relative;
+		
+	.hidden-info-button {
+		width: 100%;
+		padding-top:    7px;
+		padding-bottom: 5px;
+		display: block;
+		border-bottom: 1px dashed $lrg-line-color-basic;
+		background-color: $lrg-button-background-color-basic;
+		font-size: 18px;
+		text-align: center;
+		color: $lrg-line-color-basic; 
+
+		&:after {
+			font-family: single_corners;
+			content: "\e802";
+
+			margin-top: -20px;
+			display: block;
+			position: relative;
+			top: 18px;
+			font-size: 18px;
+			color: $lrg-line-color-basic;
+		}
+		&:hover:after  {color: $lrg-line-color-hover;}
+		&:active:after {color: $lrg-line-color-active;}
+		&:focus:after  {top: 13px; color: $lrg-line-color-basic; @include transform (matrix(1, 0, 0, -1, 0, 0));}
+
+		&:after, 
+		&:hover:after, 
+		&:active:after, 
+		&:focus:after 
+		{@include transition ($lrg-tran-hidden-info-button-color, transform 0.2s linear, top 0.2s linear);}
+
+		&:hover  {border-color: $lrg-line-color-hover;  color: $lrg-button-font-color-hover;}
+		&:active {border-color: $lrg-line-color-active; color: $lrg-button-font-color-active;}
+
+		&, 
+		&:hover, 
+		&:active 
+		{@include transition (border 0.1s linear, $lrg-tran-hidden-info-button-color);}
+	}
+
+	.hidden-content {
+		height: 0px;
+		padding-right: 1%;
+		padding-bottom: 25px;
+		padding-left: 1%;
+		position: relative;
+		overflow: hidden;
+
+		@include transition (height 0.5s ease, padding-bottom 0.5s ease);
+		/*
+		.menu {
+			width: 100%;
+			position: absolute;
+			top: -63px; 
+			line-height: 2;
+
+			@include transition (top 0.5s ease);
+		}
+		*/
+	}
+
+	.hidden-info-button:active + .hidden-content,
+	.hidden-info-button:focus  + .hidden-content,
+	.hidden-info-button:focus .hidden-content:hover {height: 100px; padding-bottom: 25px; @include transition (height 0.5s ease/*, padding-bottom 0.5s ease*/);}
+/*
+	.hidden-info-button:active + .hidden-content .menu,
+	.hidden-info-button:focus  + .hidden-content .menu,
+	.hidden-info-button:focus .hidden-content:hover .menu {top: 0px; @include transition (top 0.5s ease);}
+	*/
+}	

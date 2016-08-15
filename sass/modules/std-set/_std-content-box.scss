@@ -1,0 +1,90 @@
+﻿/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *\
+|* Module name ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Module name *|
+\* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* COMMON */
+
+// Code
+
+
+
+
+
+
+/* LARGE */
+@media screen and (min-width: $site-lrg-width-min) {
+	
+	.wrapper-content-box {
+		width: 100%;
+
+		h2 {
+			font-size: 26px;
+			margin: 0;
+			margin-bottom: 20px;
+			margin-left: 10px;
+		}
+
+		h3 {
+			font-size: 20px;
+			margin: 0;
+			margin-bottom: 20px;
+		}
+
+		a {
+			color: $color-first-basic;
+			text-decoration: underline;
+		}
+
+		.content-box {
+			width: 100%;
+			padding: 30px;
+			background-color: $color-second-basic;
+			box-shadow: $shadow;
+
+			table {
+				width: 100%;
+
+				td {
+					padding: 3px 0px;
+				}
+
+				tr > :first-child {
+					width: 0;
+					white-space: nowrap;
+					color: $color-first-basic;
+
+					a {
+						white-space: normal;
+					}
+				}
+				tr > :nth-child(2) {
+					width: 100%;
+					padding-left: 20px;
+				}
+			}
+		}
+	}
+	
+}
+
+
+
+
+
+/* MEDIUM */
+@media screen and (min-width: $site-mdm-width-min) and (max-width: $site-mdm-width-max) {
+	
+	
+	
+}
+
+
+
+
+
+/* SMALL */
+@media screen and (max-width: $site-sml-width-max) {
+	
+	
+	
+}

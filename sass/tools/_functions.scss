@@ -1,0 +1,29 @@
+// ######################################################################################################################################################
+// COMMON FUNCTIONS #################################################################################################################### COMMON FUNCTIONS
+// ######################################################################################################################################################
+
+// Проверка набора цветов на наличия значения цвета и замена на основной, в случае отсутствия значения
+@function ColorCheck($colors-map) {
+	@each $color in map-keys($colors-map) {
+		@if map-get($colors-map, $color) == 0 {
+			$colors-map-new: ($color: map-get($colors-map, basic));
+			@return map-merge(map-remove($colors-map, $color), $colors-map-new);
+		}
+	}
+	@return $colors-map;
+}
+
+// Создает строку значений для свойства transition
+@function CreateTransitionValueString ($properties, $value) {
+	$string: null;
+	
+	@each $property in $properties {
+		$string: $string $property $value;
+		$string: $string + ",";
+	}
+	
+	$string: unquote($string);
+	$string: str-slice($string, 1, str-length($string) - 1); // Выделение подстроки за исключением последнего символа
+	
+	@return $string;
+}

@@ -1,0 +1,127 @@
+// ######################################################################################################################################################
+// ЦВЕТОВАЯ СХЕМА СВЕТЛАЯ ######################################################################################################## ЦВЕТОВАЯ СХЕМА СВЕТЛАЯ
+// ######################################################################################################################################################
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// МАССИВЫ ЦВЕТОВ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ МАССИВЫ ЦВЕТА
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$color-text: (
+	basic:  #666,
+	hover:  #404040,
+	active: #1d1d1d,
+	focus:  0,
+	faded:  #c1c1c1
+); //$color-text: color-check($color-text);
+
+$color-first: (
+	basic:  #ff0000,
+	hover:  #d40000,
+	active: #7b0000,
+	focus:  0,
+	faded:  #ff4444
+); //$color-first: color-check($color-first);
+
+$color-second: (
+	basic:  #ffffff,
+	hover:  0,
+	active: 0,
+	focus:  0,
+	faded:  0
+); //$color-second: color-check($color-second);
+
+$color-third: (
+	basic:  #f8f8f8,
+	hover:  #efefef,
+	active: #dddddd,
+	focus:  0,
+	faded:  0
+); //$color-third: color-check($color-third);
+
+$color-border: (
+	basic:  #d3d3d3,
+	hover:  #a7a7a7,
+	active: 0,
+	focus:  0,
+	faded:  0
+); //$color-border: color-check($color-border);
+
+$color-background: (
+	basic:  #e7e7e7,
+	hover:  0,
+	active: 0,
+	focus:  0,
+	faded:  0
+); //$color-background: color-check($color-background);
+
+$color-other: (
+	basic:  #bababa,
+	hover:  0,
+	active: 0,
+	focus:  0,
+	faded:  0
+); //$color-other: color-check($color-other);
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ПЕРЕМЕННЫЕ ЦВЕТОВ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ПЕРЕМЕННЫЕ ЦВЕТА
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+// Цвет текста
+$color-text: $color-text;
+$color-text-basic:  map-get($color-text, basic);
+$color-text-hover:  map-get($color-text, hover);
+$color-text-active: map-get($color-text, active);
+$color-text-focus:  map-get($color-text, focus);
+$color-text-faded:  map-get($color-text, faded);
+
+// Цвет темы 1
+$color-first-basic:  map-get($color-first, basic);
+$color-first-hover:  map-get($color-first, hover);
+$color-first-active: map-get($color-first, active);
+$color-first-focus:  map-get($color-first, focus);
+$color-first-faded:  map-get($color-first, faded);
+
+// Цвет темы 2
+$color-second-basic:  map-get($color-second, basic);
+$color-second-hover:  map-get($color-second, hover);
+$color-second-active: map-get($color-second, active);
+$color-second-focus:  map-get($color-second, focus);
+$color-second-faded:  map-get($color-second, faded);
+
+// Цвет темы 3
+$color-third-basic:  map-get($color-third, basic);
+$color-third-hover:  map-get($color-third, hover);
+$color-third-active: map-get($color-third, active);
+$color-third-focus:  map-get($color-third, focus);
+$color-third-faded:  map-get($color-third, faded);
+
+// Цвет границ
+$color-border-basic:  map-get($color-border, basic);
+$color-border-hover:  map-get($color-border, hover);
+$color-border-active: map-get($color-border, active);
+$color-border-focus:  map-get($color-border, focus);
+$color-border-faded:  map-get($color-border, faded);
+
+// Цвет фона сайта
+$color-background-basic:  map-get($color-background, basic);
+$color-background-hover:  map-get($color-background, hover);
+$color-background-active: map-get($color-background, active);
+$color-background-focus:  map-get($color-background, focus);
+$color-background-faded:  map-get($color-background, faded);
+
+// Дополнительный цвет
+$color-other-basic:  map-get($color-other, basic);
+$color-other-hover:  map-get($color-other, hover);
+$color-other-active: map-get($color-other, active);
+$color-other-focus:  map-get($color-other, focus);
+$color-other-faded:  map-get($color-other, faded);
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ТЕНИ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ТЕНИ
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+$shadow: 2px 2px 10px #989898;

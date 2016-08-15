@@ -1,0 +1,44 @@
+/* ###################################################################################################################################################### *\
+|* THEME ########################################################################################################################################## THEME *|
+\* ###################################################################################################################################################### */
+
+$site-font: PragmaticaLightC;
+
+/* FONTS */
+
+@font-face {
+	font-family: PragmaticaLightC;
+	src: url("/Content/fonts/PragmaticaLightC.otf");
+}
+
+@font-face {
+	font-family: single_corners;
+	src: url("/Content/fonts/single_corners.ttf");
+}
+
+
+
+
+
+/* RULES */
+
+body {
+	background-color: $color-background-basic;
+	font-family: $site-font;
+	color: $color-text-basic;
+}
+
+a {
+	color: $color-text-basic;
+	text-decoration: none;
+	outline: none;
+}
+
+.background-color-none {
+	height: auto;
+	background-color: transparent !important;
+}
+
+.text-color-first {
+	color: $color-first-basic;
+}

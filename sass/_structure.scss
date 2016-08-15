@@ -1,0 +1,278 @@
+// ######################################################################################################################################################
+// VARIABLES ################################################################################################################################## VARIABLES
+// ######################################################################################################################################################
+
+$site-lrg-width: 1200px; // Максимальная ширина широкой версии сайта // Максимальная ширина сайта
+$site-mdm-width: 800px;  // Максимальная ширина средней версии сайта
+$site-sml-width: 400px;  // Максимальная ширина узкой версии сайта
+
+$header-pos-lrg: relative; // Header position in large version
+$header-pos-mdm: relative; // Header position in medium version
+$header-pos-sml: relative; // Header position in small version
+
+$header-width: 100%;
+$article-width: 90%;
+$footer-width: 100%;
+
+$col-min-width: 50px;
+
+$std-margin-lrg: 20px;
+$std-margin-mdm: 10px;
+$std-margin-sml: 5px;
+
+
+
+
+
+$site-lrg-width-max: $site-lrg-width;     // Максимальная ширина широкой версии сайта
+$site-lrg-width-min: $site-mdm-width + 1; // Минимальная  ширина широкой версии сайта
+$site-mdm-width-max: $site-mdm-width; 	  // Максимальная ширина средней версии сайта
+$site-mdm-width-min: $site-sml-width + 1; // Минимальная  ширина средней версии сайта
+$site-sml-width-max: $site-sml-width; 	  // Максимальная ширина узкой версии сайта
+
+$site-tran-between-versions: 
+	width 0.1s linear,
+	margin-right 0.1s linear,
+	margin-bottom 0.1s linear,
+	margin-left 0.1s linear;
+
+
+
+
+
+/* ###################################################################################################################################################### *\
+|* STRUCTURE ################################################################################################################################## STRUCTURE *|
+\* ###################################################################################################################################################### */
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *\
+|* Rows and Columns ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Rows and Columns *|
+\* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* ROWS PROPERTIES */
+[class*="row"] {
+	display: flex; 
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+/* HORIZONTAL ALIGNMENT IN ROWS */
+[class*="justify-content-start"]   {justify-content: flex-start;}
+[class*="justify-content-end"]     {justify-content: flex-end;}
+[class*="justify-content-center"]  {justify-content: center;}
+[class*="justify-content-between"] {justify-content: space-between;}
+[class*="justify-content-around"]  {justify-content: space-around;}
+
+/* Назввание классов на будущее */
+[class*="content-horizontal-align-left"]    {justify-content: flex-start;}
+[class*="content-horizontal-align-center"]  {justify-content: center;}
+[class*="content-horizontal-align-right"]   {justify-content: flex-end;}
+[class*="content-horizontal-align-between"] {justify-content: space-between;}
+[class*="content-horizontal-align-around"]  {justify-content: space-around;}
+
+/* VERTICAL ALIGNMENT IN ROWS */
+[class*="align-items-start"]    {align-items: flex-start;}
+[class*="align-items-end"]      {align-items: flex-end;}
+[class*="align-items-center"]   {align-items: center;}
+[class*="align-items-stretch"]  {align-items: stretch;}
+[class*="align-items-baseline"] {align-items: baseline;}
+
+/* Назввание классов на будущее */
+[class*="content-vertical-align-top"]     {align-items: flex-start;}
+[class*="content-vertical-align-center"]  {align-items: center;}
+[class*="content-vertical-align-bottom"]  {align-items: flex-end;}
+[class*="content-vertical-align-between"] {align-items: space-between;}
+[class*="content-vertical-align-around"]  {align-items: space-around;}
+
+
+
+/* COLUMNS PROPERTIES */ //Продолжение есть в отдельных версиях
+[class^="column-"] {
+	float: left;
+
+	@include transition ($site-tran-between-versions);
+}
+
+/* SELECT COLUMN VERTICAL ALIGNMENT */
+[class*="align-self-start"]    {align-self: flex-start;}
+[class*="align-self-end"]  	   {align-self: flex-end;}
+[class*="align-self-center"]   {align-self: center;}
+[class*="align-self-stretch"]  {align-self: stretch;}
+[class*="align-self-baseline"] {align-self: baseline;}
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *\
+|* Large version ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Large version *|
+\* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media screen and (min-width: $site-lrg-width-min) {	
+	
+	header {
+		width: 100%;
+		position: $header-pos-lrg;
+		margin: auto;
+		top: 0;
+		z-index: 100;
+	}
+
+	article {
+		width: $article-width;
+		max-width: $site-lrg-width-max;
+		margin: auto;
+
+		@if $header-pos-lrg == fixed { 
+			margin-top: $std-margin-lrg + 100px; // Для фиксированного хедера
+		}
+		@else {
+			margin-top: $std-margin-lrg; // Для нефиксированного хедера
+		}
+	}
+
+	footer {
+		width: 100%;
+		@if $footer-width < 100% {
+			max-width: $site-lrg-width-max + 100px;
+		}
+		margin: auto;
+		padding-top: $std-margin-lrg;
+		padding-bottom: $std-margin-lrg;
+	}
+
+	.footer-container {
+		width: calc(#{$article-width} - #{$std-margin-lrg});
+		@if $footer-width < 100% { 
+			width: calc(100% - #{$std-margin-lrg});
+		}
+		max-width: $site-lrg-width-max;
+		margin: auto;
+	}	
+
+	/* COLUMNS PROPERTIES */
+	[class^="column-"] {
+		margin-right: ($std-margin-lrg / 2);
+		margin-left:  ($std-margin-lrg / 2);
+		margin-bottom: $std-margin-lrg;
+	}
+
+	/* COLUMN WIDTH */
+	@for $i from 1 through 12 {
+		.column-#{$i} {
+			width: calc(100% * (#{$i} / 12) - #{$std-margin-lrg});
+			
+			@if $i == 1 {
+				min-width: ($col-min-width * $i) + $std-margin-lrg * ($i - 1);
+			}
+		}
+	}
+}
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *\
+|* Medium version ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Medium version *|
+\* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media screen and (min-width: $site-mdm-width-min) and (max-width: $site-mdm-width-max){	
+	
+	header {
+		width: 100%;
+		position: $header-pos-mdm;
+		top: 0;
+		z-index: 100;
+	}
+
+	article {
+		width: 100%;
+		margin: auto;
+
+		@if $header-pos-mdm == fixed {
+			margin-top: $std-margin-mdm + 100px;
+		} // Для фиксированного хедера
+		@else {
+			margin-top: $std-margin-mdm;
+		} // Для нефиксированного хедера
+	}
+
+	footer {
+		width: 100%;
+		padding-top: $std-margin-mdm;
+		padding-bottom: $std-margin-mdm;
+	}	
+
+	/* COLUMNS PROPERTIES */
+	[class^="column-"] {
+		margin-right: ($std-margin-mdm / 2);
+		margin-left:  ($std-margin-mdm / 2);
+		margin-bottom: $std-margin-mdm;
+	}
+	
+	/* COLUMN WIDTH */
+	@for $i from 1 through 12 {
+		.column-#{$i} {
+			width: calc(100% * (#{$i} / 12) - #{$std-margin-mdm});
+			@if $i == 1 {
+				min-width: ($col-min-width * $i) + $std-margin-mdm * ($i - 1);
+			}
+		}
+	}
+}
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *\
+|* Small version ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Small version *|
+\* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media screen and (max-width: $site-sml-width-max){	
+	
+	header {
+		width: 100%;
+		position: $header-pos-sml;
+		top: 0;
+		z-index: 100;
+	}
+
+	article {
+		width: 100%;
+		margin: auto;
+
+		@if $header-pos-sml == fixed 
+			{margin-top: $std-margin-sml + 100px;} // Для фиксированного хедера
+		@else 
+			{margin-top: $std-margin-sml;} // Для нефиксированного хедера
+	}
+
+	footer {
+		width: 100%;
+		padding-top: $std-margin-sml;
+		padding-bottom: $std-margin-sml;
+	}	
+	
+	/* COLUMNS PROPERTIES */
+	[class^="column-"] {
+		margin-right: ($std-margin-sml / 2);
+		margin-left:  ($std-margin-sml / 2);
+		margin-bottom: $std-margin-sml;
+	}
+	
+	/* COLUMN WIDTH */
+	@for $i from 1 through 12 {
+		.column-#{$i} {
+			@if $i == 1 
+				{width: calc(100% * (4 / 12) - #{$std-margin-sml});}
+			@else if $i == 2 
+				{width: calc(100% * (6 / 12) - #{$std-margin-sml});}
+			@else 
+				{width: calc(100% * (12 / 12) - #{$std-margin-sml});}
+		}
+	}
+}

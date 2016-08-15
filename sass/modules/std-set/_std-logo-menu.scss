@@ -1,0 +1,255 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *\
+|* STANDART MENU AND LOGO ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ STANDART MENU AND LOGO *|
+\* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+// ПЕРЕМЕННЫЕ
+
+$menu-item-number: 8;
+
+$sml-menu-font-size: 16px;
+
+$sml-tran-menu-trigger-background: background-color 0.1s linear;
+
+$header-height-lrg: 100px;
+$header-height-mdm: 100px;
+$header-height-sml: 100px;
+
+
+
+
+
+.header-content-std {
+	.logo {
+		a {font-size: 24px; text-transform: uppercase;}
+	}
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *\
+|* Large version ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Large version *|
+\* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media screen and (min-width: $site-lrg-width-min) {
+
+	.header-wrapper {
+		width: $header-width;
+		@if $header-width < 100%
+			{max-width: $site-max-width + 100px;}
+		margin: auto;
+		background-color: $color-second-basic;
+		box-shadow: $shadow;
+	}
+
+	.header-container {
+		width: calc(#{$article-width} - #{$std-margin-lrg});
+		@if $header-width < 100%
+			{width: calc(100% - #{$std-margin-lrg});}
+		max-width: $site-lrg-width-max - $std-margin-lrg;
+		margin: auto;
+	}
+	
+	.header-content-std {
+		width: 100%;
+		height: $header-height-lrg;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.logo {
+			height: 100%;
+			display: inline-block;
+			line-height: $header-height-lrg;
+		}
+
+				
+		.menu-button {
+			display: none;
+		}
+		
+		.menu {
+			width: 50%;
+			height: 70%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+
+			.menu-item {
+				margin-right: 2%;
+				margin-left: 2%;
+				flex-grow: 1;
+				flex-basis: 0px;
+				text-align: center;
+
+				a {
+					font-size: 14px;
+					letter-spacing: 3px;
+				
+					@include transition-linear-01 (letter-spacing, font-size, color);
+				
+					&:hover {
+						font-size: 15px;
+						letter-spacing: 3.5px;
+					
+						@include transition-linear-02 (letter-spacing, font-size, color);
+					}
+					&:active {
+						font-size: 14.5px;
+						letter-spacing: 3.25px;
+					
+						@include transition-linear-01 (letter-spacing, font-size, color);
+					}
+					&:focus {
+						font-size: 14.5px;
+						letter-spacing: 3.25px;
+					
+						@include transition-linear-02 (letter-spacing, font-size, color);
+					}
+				}
+			}
+
+			.menu-item.choosen a{
+				color: $color-first-basic;
+			}
+		}
+	}
+	
+}
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *\
+|* Medium version ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Medium version *|
+\* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media screen and (min-width: $site-mdm-width-min) and (max-width: $site-mdm-width-max) {
+
+	.header-wrapper {
+		width: 100%;
+		margin: auto;
+	}
+	
+	.header-content-std {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-content: stretch;
+
+		.logo {
+			width: 100%;
+			display: inline-block;
+			text-align: center;
+			line-height: 65px;
+		}
+
+				
+		.menu-button {
+			display: none;
+		}
+		
+		.menu {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+				
+			a {
+				padding: 8px 2%;
+				display: block;
+				flex-grow: 1;
+				text-align: center;
+
+				&:hover  {background-color: $color-third-hover;}
+				&:active {background-color: $color-third-active;}
+				
+				&, 
+				&:hover, 
+				&:active {@include transition (background-color 0.1s linear);}
+			}
+		}
+	}
+	
+}
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *\
+|* Small version ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Small version *|
+\* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media screen and (max-width: $site-sml-width-max){
+	
+	.header-wrapper {
+		width: 100%;
+		margin: auto;
+	}
+	
+	.header-content-std {
+		width: 100%;
+
+		.logo {
+			width: 100%;
+			position: relative;
+			z-index: 10;
+			background-color: $color-second-basic;
+			text-align: center;
+			line-height: 65px;
+		}
+
+		.menu-button, .menu {font-size: $sml-menu-font-size;}
+		
+		.menu-button {
+			width: 100%;
+			display: block;
+			position: relative;
+			z-index: 10;
+			text-align: center;
+			line-height: 2;
+			background-color: $color-second-basic;
+			
+			&:hover  {background-color: $color-third-hover;}
+			&:active {background-color: $color-third-active;}
+			&:focus  {background-color: $color-third-active;}
+			
+			&, 
+			&:hover, 
+			&:active, 
+			&:focus 
+			{@include transition ($sml-tran-menu-trigger-background);}
+		}
+		
+		.menu {
+			width: 100%;
+			position: absolute;
+			top: -200px;
+			z-index: 0;
+			
+			@include transition (top 0.2s ease-out);
+			
+			a {
+				width: 100%;
+				display: block;
+				background-color: $color-second-basic;
+				border-bottom: 1px solid $color-border-basic;
+				line-height: 2;
+				text-align: center;
+				
+				&:hover  {background-color: $color-other-basic;}
+				&:active {background-color: $color-border-basic;}
+				
+				&:hover, 
+				&:active 
+				{@include transition ($sml-tran-menu-trigger-background);}
+			}
+		}
+		.menu-button:active + .menu,
+		.menu-button:focus + .menu,
+		.menu:hover 
+			{box-shadow: $shadow; top: ($menu-item-number - 2) * $sml-menu-font-size + 4px; @include transition (top 0.5s ease-out);}
+	}
+}

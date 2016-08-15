@@ -1,0 +1,69 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *\
+|* Standart header ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Standart header *|
+\* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* COMMON */
+
+@mixin std-header-logo-txt () {
+	.text {
+		//display: block;
+		margin: auto;
+
+	}
+}
+
+@mixin std-header-logo-img () {
+	.image {
+		display: none;
+		margin: auto;
+	}
+}
+
+
+
+
+
+/* LARGE */
+@media screen and (min-width: $site-lrg-width-min) {
+	.std-header-wrapper {
+		@include std-wrapper();
+		
+		.std-header-container {
+			@include std-container (100%, $color-second-basic, $shadow);
+			
+			height: 100px;
+			justify-content: space-between;
+			align-items: center;
+			
+			.logo {
+				width: 20%;
+				
+				@include std-header-logo-txt;
+				@include std-header-logo-img;
+			}
+		}
+	}
+	
+}
+
+
+
+
+
+/* MEDIUM */
+@media screen and (min-width: $site-mdm-width-min) and (max-width: $site-mdm-width-max) {
+	
+	
+	
+}
+
+
+
+
+
+/* SMALL */
+@media screen and (max-width: $site-sml-width-max) {
+	
+	
+	
+}
