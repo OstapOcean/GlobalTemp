@@ -18,8 +18,9 @@ $site-footer-width: 100%;
 |* MAIN STRUCTURE     # *| 
 \* #################### */
 
-.site-content, .site-header, .site-footer {
-    display: flex;
+.site-content, .header-content, .main-content, .footer-content {
+	width: 100%;
+	display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -66,7 +67,6 @@ $site-footer-width: 100%;
 .row {
     width: 100%;
     max-width: $site-width-max-lrg;
-    margin-bottom: $site-margin-lrg;
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
@@ -77,18 +77,21 @@ $site-footer-width: 100%;
     width: $site-content-width;
 }
 
-.row.fullwidth {
-    width: 100%;
-    max-width: 100%;
-}
-
 @for $i from 1 through 12 {
     .column-#{$i} {
         width: calc((#{$i} / 12) * (100% + #{$site-margin-lrg}) - #{$site-margin-lrg});
         margin-left: $site-margin-lrg;
+		margin-bottom: $site-margin-lrg;
         
         &:first-child {
 	        margin-left: 0;
         }
     }
+}
+
+[class*="column"].first {
+	margin-left: 0;
+}
+[class*="column"].last {
+	margin-bottom: 0;
 }
