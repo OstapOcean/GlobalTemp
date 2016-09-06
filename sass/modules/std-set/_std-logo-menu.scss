@@ -40,7 +40,7 @@ $header-height-sml: 100px;
 	}
 
 	.header-container {
-		width: calc(#{$article-width} - #{$std-margin-lrg});
+		width: calc(#{$content-width} - #{$std-margin-lrg});
 		@if $header-width < 100%
 			{width: calc(100% - #{$std-margin-lrg});}
 		max-width: $site-lrg-width-max - $std-margin-lrg;

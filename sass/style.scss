@@ -6,9 +6,10 @@
 @import "tools/_mixins.scss";      // Mixins
 @import "tools/_extra.scss";       // Extra rules
 
-@import "_structure.scss";         // General structure
+//@import "_structure.scss";         // General structure
+@import "_structure_2-00.scss";      // General structure
 
 @import "layout/color-schemes/_light-blue-scheme"; // Color scheme
 @import "layout/_theme.scss";                      // Theme
 
-@import "modules/_modules.scss";   // Modules
+//@import "modules/_modules.scss";   // Modules

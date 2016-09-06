@@ -11,7 +11,7 @@ $header-pos-mdm: relative; // Header position in medium version
 $header-pos-sml: relative; // Header position in small version
 
 $header-width: 100%;
-$article-width: 90%;
+$content-width: 90%;
 $footer-width: 100%;
 
 $col-min-width: 50px;
@@ -24,11 +24,11 @@ $std-margin-sml: 5px;
 
 
 
-$site-lrg-width-max: $site-lrg-width;     // Максимальная ширина широкой версии сайта
-$site-lrg-width-min: $site-mdm-width + 1; // Минимальная  ширина широкой версии сайта
-$site-mdm-width-max: $site-mdm-width; 	  // Максимальная ширина средней версии сайта
-$site-mdm-width-min: $site-sml-width + 1; // Минимальная  ширина средней версии сайта
-$site-sml-width-max: $site-sml-width; 	  // Максимальная ширина узкой версии сайта
+$site-lrg-width-max: $site-lrg-width;     // Max width of wide site version
+$site-lrg-width-min: $site-mdm-width + 1; // Min width of wide site version
+$site-mdm-width-max: $site-mdm-width; 	  // Max width of medium site version
+$site-mdm-width-min: $site-sml-width + 1; // Min width of medium site version
+$site-sml-width-max: $site-sml-width; 	  // Max width of small site version
 
 $site-tran-between-versions: 
 	width 0.1s linear,
@@ -50,12 +50,25 @@ $site-tran-between-versions:
 |* Rows and Columns ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Rows and Columns *|
 \* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* ROWS PROPERTIES */
-[class*="row"] {
+body > [class*="row"] {
+    width: 90%;
+    max-width: $site-lrg-width;
+    height: 100%;
 	display: flex; 
 	flex-wrap: wrap;
-	justify-content: center;
 	align-items: flex-start;
+}
+
+[class*="fullwidth"] {
+    //width: 100%;
+    max-width: 100%;
 }
 
 /* HORIZONTAL ALIGNMENT IN ROWS */
@@ -121,7 +134,7 @@ $site-tran-between-versions:
 	}
 
 	article {
-		width: $article-width;
+		width: $content-width;
 		max-width: $site-lrg-width-max;
 		margin: auto;
 
@@ -144,7 +157,7 @@ $site-tran-between-versions:
 	}
 
 	.footer-container {
-		width: calc(#{$article-width} - #{$std-margin-lrg});
+		width: calc(#{$content-width} - #{$std-margin-lrg});
 		@if $footer-width < 100% { 
 			width: calc(100% - #{$std-margin-lrg});
 		}
@@ -153,10 +166,10 @@ $site-tran-between-versions:
 	}	
 
 	/* COLUMNS PROPERTIES */
-	[class^="column-"] {
+    body > .row [class*="column-"] {
 		margin-right: ($std-margin-lrg / 2);
 		margin-left:  ($std-margin-lrg / 2);
-		margin-bottom: $std-margin-lrg;
+		margin-bottom: $std-margin-lrg; 
 	}
 
 	/* COLUMN WIDTH */

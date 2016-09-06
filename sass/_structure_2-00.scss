@@ -1,0 +1,94 @@
+$site-width-lrg: 1200px; // Max width of wide site version   // Max width of wide site
+$site-width-mdm: 800px;  // Max width of medium site version
+$site-width-sml: 400px;  // Max width of small site version
+
+$site-width-max-lrg: $site-width-lrg;     // Max width of wide site version
+$site-width-min-lrg: $site-width-mdm + 1; // Min width of wide site version
+$site-width-max-mdm: $site-width-mdm; 	  // Max width of medium site version
+$site-width-min-mdm: $site-width-sml + 1; // Min width of medium site version
+$site-width-max-sml: $site-width-sml; 	  // Max width of small site version
+
+$site-margin-lrg: 20px;
+
+$site-header-width:  95%;
+$site-content-width: 90%;
+$site-footer-width: 100%;
+
+/* #################### *\
+|* MAIN STRUCTURE     # *| 
+\* #################### */
+
+.site-content, .site-header, .site-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.site-header {
+    width: $site-header-width;
+    
+    & > .row {
+		width: calc(#{$site-header-width} * (#{$site-content-width} / #{$site-header-width}));
+		width: calc(#{$site-header-width} * (0.9 / 0.95));
+		width: calc(#{$site-content-width} + 100% * (#{$site-header-width} - #{$site-content-width}));
+        //width: $site-header-width * ($site-content-width / $site-header-width);
+    }
+}
+
+.site-footer {
+    @if $site-footer-width >= 100% {
+        width: $site-footer-width;
+        
+         & > .row {
+            width: $site-content-width;
+        }
+    }
+    @else if $site-footer-width < $site-content-width {
+        width: $site-footer-width;
+        max-width: 1000px;
+        padding: 0 $site-margin-lrg / 2;
+        
+        & > .row {
+            width: 100%;
+        }
+    }
+    @else {
+        width: calc(#{$site-footer-width} + #{$site-margin-lrg});
+        max-width: calc(#{$site-width-lrg} + #{$site-margin-lrg});
+        padding: 0 $site-margin-lrg / 2;
+        
+         & > .row {
+            width: $site-content-width;
+        }
+    }
+}
+
+.row {
+    width: 100%;
+    max-width: $site-width-max-lrg;
+    margin-bottom: $site-margin-lrg;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	flex-wrap: wrap;
+}
+
+.site-content > .row {
+    width: $site-content-width;
+}
+
+.row.fullwidth {
+    width: 100%;
+    max-width: 100%;
+}
+
+@for $i from 1 through 12 {
+    .column-#{$i} {
+        width: calc((#{$i} / 12) * (100% + #{$site-margin-lrg}) - #{$site-margin-lrg});
+        margin-left: $site-margin-lrg;
+        
+        &:first-child {
+	        margin-left: 0;
+        }
+    }
+}
