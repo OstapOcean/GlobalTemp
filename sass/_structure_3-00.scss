@@ -1,0 +1,52 @@
+$site-width-lrg: 1200px; // Max width of wide site version   // Max width of wide site
+$site-width-mdm: 800px;  // Max width of medium site version
+$site-width-sml: 400px;  // Max width of small site version
+
+$site-width-max-lrg: $site-width-lrg;     // Max width of wide site version
+$site-width-min-lrg: $site-width-mdm + 1; // Min width of wide site version
+$site-width-max-mdm: $site-width-mdm; 	  // Max width of medium site version
+$site-width-min-mdm: $site-width-sml + 1; // Min width of medium site version
+$site-width-max-sml: $site-width-sml; 	  // Max width of small site version
+
+$site-margin-lrg: 20px;
+
+$site-header-width:  95%;
+$site-content-width: 90%;
+$site-footer-width: 100%;
+
+/* #################### *\
+|* MAIN STRUCTURE     # *| 
+\* #################### */
+
+.site-content {
+	width: 100%;
+}
+
+.row {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	flex-wrap: wrap;
+}
+
+.row.content-align-center {
+	justify-content: center;
+}
+
+@for $i from 1 through 12 {
+    .column-#{$i} {
+        //width: calc((#{$i} / 12) * (100% + #{$site-margin-lrg}) - #{$site-margin-lrg});
+		width: calc((#{$i} / 12) * 100%);
+        padding-left: $site-margin-lrg;
+		margin-bottom: $site-margin-lrg;
+        
+        &:first-child {
+	        padding-left: 0;
+        }
+    }
+}
+
+.first {
+	padding-left: 0;
+}

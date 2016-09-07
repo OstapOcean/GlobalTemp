@@ -13,16 +13,12 @@ p {
   margin: 0;
 }
 
-header {
-  border: 1px dashed black;
+body {
+  padding: 5px;
 }
 
-.logo {
-  border: 1px dotted red;
-}
-
-.logo a {
-  border: 1px dashed black;
+.row, .column {
+  padding: 5px;
 }
 
 [class^="row"] {
@@ -30,7 +26,8 @@ header {
 }
 
 [class^="column-"] {
-  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  background-color: rgba(235, 235, 235, 0.5);
   border: 1px dashed red;
 }
 
@@ -49,156 +46,132 @@ header {
 /* #################### *\
 |* MAIN STRUCTURE     # *| 
 \* #################### */
-.site-content, .header-content, .main-content, .footer-content {
+.site-content {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.site-header {
-  width: 95%;
-}
-.site-header > .row {
-  width: calc(95% * (90% / 95%));
-  width: calc(95% * (0.9 / 0.95));
-  width: calc(90% + 100% * (95% - 90%));
-}
-
-.site-footer {
-  width: 100%;
-}
-.site-footer > .row {
-  width: 90%;
 }
 
 .row {
   width: 100%;
-  max-width: 1200px;
   display: flex;
   flex-direction: row;
   align-items: stretch;
   flex-wrap: wrap;
 }
 
-.site-content > .row {
-  width: 90%;
+.row.content-align-center {
+  justify-content: center;
 }
 
 .column-1 {
-  width: calc((1 / 12) * (100% + 20px) - 20px);
-  margin-left: 20px;
+  width: calc((1 / 12) * 100%);
+  padding-left: 20px;
   margin-bottom: 20px;
 }
 .column-1:first-child {
-  margin-left: 0;
+  padding-left: 0;
 }
 
 .column-2 {
-  width: calc((2 / 12) * (100% + 20px) - 20px);
-  margin-left: 20px;
+  width: calc((2 / 12) * 100%);
+  padding-left: 20px;
   margin-bottom: 20px;
 }
 .column-2:first-child {
-  margin-left: 0;
+  padding-left: 0;
 }
 
 .column-3 {
-  width: calc((3 / 12) * (100% + 20px) - 20px);
-  margin-left: 20px;
+  width: calc((3 / 12) * 100%);
+  padding-left: 20px;
   margin-bottom: 20px;
 }
 .column-3:first-child {
-  margin-left: 0;
+  padding-left: 0;
 }
 
 .column-4 {
-  width: calc((4 / 12) * (100% + 20px) - 20px);
-  margin-left: 20px;
+  width: calc((4 / 12) * 100%);
+  padding-left: 20px;
   margin-bottom: 20px;
 }
 .column-4:first-child {
-  margin-left: 0;
+  padding-left: 0;
 }
 
 .column-5 {
-  width: calc((5 / 12) * (100% + 20px) - 20px);
-  margin-left: 20px;
+  width: calc((5 / 12) * 100%);
+  padding-left: 20px;
   margin-bottom: 20px;
 }
 .column-5:first-child {
-  margin-left: 0;
+  padding-left: 0;
 }
 
 .column-6 {
-  width: calc((6 / 12) * (100% + 20px) - 20px);
-  margin-left: 20px;
+  width: calc((6 / 12) * 100%);
+  padding-left: 20px;
   margin-bottom: 20px;
 }
 .column-6:first-child {
-  margin-left: 0;
+  padding-left: 0;
 }
 
 .column-7 {
-  width: calc((7 / 12) * (100% + 20px) - 20px);
-  margin-left: 20px;
+  width: calc((7 / 12) * 100%);
+  padding-left: 20px;
   margin-bottom: 20px;
 }
 .column-7:first-child {
-  margin-left: 0;
+  padding-left: 0;
 }
 
 .column-8 {
-  width: calc((8 / 12) * (100% + 20px) - 20px);
-  margin-left: 20px;
+  width: calc((8 / 12) * 100%);
+  padding-left: 20px;
   margin-bottom: 20px;
 }
 .column-8:first-child {
-  margin-left: 0;
+  padding-left: 0;
 }
 
 .column-9 {
-  width: calc((9 / 12) * (100% + 20px) - 20px);
-  margin-left: 20px;
+  width: calc((9 / 12) * 100%);
+  padding-left: 20px;
   margin-bottom: 20px;
 }
 .column-9:first-child {
-  margin-left: 0;
+  padding-left: 0;
 }
 
 .column-10 {
-  width: calc((10 / 12) * (100% + 20px) - 20px);
-  margin-left: 20px;
+  width: calc((10 / 12) * 100%);
+  padding-left: 20px;
   margin-bottom: 20px;
 }
 .column-10:first-child {
-  margin-left: 0;
+  padding-left: 0;
 }
 
 .column-11 {
-  width: calc((11 / 12) * (100% + 20px) - 20px);
-  margin-left: 20px;
+  width: calc((11 / 12) * 100%);
+  padding-left: 20px;
   margin-bottom: 20px;
 }
 .column-11:first-child {
-  margin-left: 0;
+  padding-left: 0;
 }
 
 .column-12 {
-  width: calc((12 / 12) * (100% + 20px) - 20px);
-  margin-left: 20px;
+  width: calc((12 / 12) * 100%);
+  padding-left: 20px;
   margin-bottom: 20px;
 }
 .column-12:first-child {
-  margin-left: 0;
+  padding-left: 0;
 }
 
-[class*="column"].first {
-  margin-left: 0;
-}
-
-[class*="column"].last {
-  margin-bottom: 0;
+.first {
+  padding-left: 0;
 }
 
 /* ###################################################################################################################################################### *\

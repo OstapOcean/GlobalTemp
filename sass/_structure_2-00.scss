@@ -18,6 +18,10 @@ $site-footer-width: 100%;
 |* MAIN STRUCTURE     # *| 
 \* #################### */
 
+.site-content {
+	height: 100%;
+}
+
 .site-content, .header-content, .main-content, .footer-content {
 	width: 100%;
 	display: flex;
