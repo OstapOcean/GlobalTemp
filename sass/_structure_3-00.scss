@@ -28,25 +28,33 @@ $site-footer-width: 100%;
 	flex-direction: row;
 	align-items: stretch;
 	flex-wrap: wrap;
-}
 
-.row.content-align-center {
-	justify-content: center;
+	&.content-align-left   {justify-content: flex-start;}
+	&.content-align-center {justify-content: center;}
+	&.content-align-right  {justify-content: flex-end;}
+	&.content-align-top    {align-items: flex-start;}
+	&.content-align-middle {align-items: center;}
+	&.content-align-bottom {align-items: flex-end;}
+	
+	&.inner {
+		margin-bottom: -$site-margin-lrg;
+	}
 }
 
 @for $i from 1 through 12 {
     .column-#{$i} {
-        //width: calc((#{$i} / 12) * (100% + #{$site-margin-lrg}) - #{$site-margin-lrg});
-		width: calc((#{$i} / 12) * 100%);
-        padding-left: $site-margin-lrg;
+        width: calc((#{$i} / 12) * (100% + #{$site-margin-lrg}) - #{$site-margin-lrg});
+		// width: calc((#{$i} / 12) * 100%);
+        margin-left: $site-margin-lrg;
 		margin-bottom: $site-margin-lrg;
         
         &:first-child {
-	        padding-left: 0;
+	        margin-left: 0;
         }
+		
+		&.first {
+			margin-left: 0;
+		}
     }
 }
 
-.first {
-	padding-left: 0;
-}
