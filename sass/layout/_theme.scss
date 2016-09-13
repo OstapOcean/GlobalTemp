@@ -1,30 +1,90 @@
-/* ###################################################################################################################################################### *\
-|* THEME ########################################################################################################################################## THEME *|
-\* ###################################################################################################################################################### */
+/* #################### *\
+|* THEME              # *| 
+\* #################### */
 
-$site-font: PragmaticaLightC;
 
-/* FONTS */
+
+// ~~~~~~~~~~~
+// Variables ~
+// ~~~~~~~~~~~
+
+$std-margin: 20px;
+
+
+
+// ~~~~~~~~~~~~~~
+// Color scheme ~
+// ~~~~~~~~~~~~~~
+
+@import "layout/color-schemes/_light-red-scheme";
+
+
+
+/* ~~~~~~~~~~ *\
+|* Fonts    ~ *|
+\* ~~~~~~~~~~ */
 
 @font-face {
-	font-family: PragmaticaLightC;
-	src: url("/Content/fonts/PragmaticaLightC.otf");
+	font-family: PragmaticeLightC;
+	src: url("/Users/Ostap/Documents/GitHub/GlobalTemp/fonts/PragmaticaLightC.otf");
 }
 
 @font-face {
 	font-family: single_corners;
-	src: url("/Content/fonts/single_corners.ttf");
+	src: url("fonts/single_corners.ttf");
+}
+
+@font-face {
+	font-family: loop-search;
+	src: url("/Users/Ostap/Documents/GitHub/GlobalTemp/fonts/loop-search.ttf");
+}
+
+$site-font-name: PragmaticeLightC;
+
+/* ~~~~~~~~~~~ *\
+|* Structure ~ *|
+\* ~~~~~~~~~~~ */
+
+.row {
+	&[class*="column"] {
+		margin-left:   0;
+		margin-bottom: 0;
+	}
+	&.inner {
+		margin-bottom: -$std-margin;
+	}
+	&.without-padding > [class*="column"] {
+		margin-left:   0;
+		margin-bottom: 0;
+	}
+}
+
+[class*="column"] {
+	margin-left:   $std-margin;
+	margin-bottom: $std-margin;
+	
+	&:first-child {
+		margin-left: 0;
+	}
+	&.first {
+		margin-left: 0;
+	}
+	&.without-padding {
+		margin-left:   0;
+		margin-bottom: 0;
+	}
 }
 
 
 
-
-
-/* RULES */
+/* ~~~~~~~~~~ *\
+|* Rules    ~ *|
+\* ~~~~~~~~~~ */
 
 body {
 	background-color: $color-background-basic;
-	font-family: $site-font;
+	font-family: $site-font-name;
+	font-size: 13px;
 	color: $color-text-basic;
 }
 

@@ -1,45 +1,28 @@
-// ######################################################################################################################################################
-// GLOBAL MIXINS ########################################################################################################################## GLOBAL MIXINS
-// ######################################################################################################################################################
+// ####################
+// GLOBAL MIXINS      #
+// ####################
 
-@mixin transition-linear-01 ($properties...) {	
-	$value: linear 0.1s;
-	
+@mixin transition ($value, $properties...) {
 	@each $prefix in $vendor-prefixes {
-		#{$prefix}transition: CreateTransitionValueString($properties, $value);
+		#{$prefix}transition: CreateTransitionValueString($value, $properties);
 	}
 }
 
-@mixin transition-linear-02 ($properties...) {
-	$value: linear 0.2s;
-	
+@mixin transform  ($value...) {
 	@each $prefix in $vendor-prefixes {
-		#{$prefix}transition: CreateTransitionValueString($properties, $value);
+		#{$prefix}transform:  $value;
 	}
 }
-
-@mixin transition-linear-03 ($properties...) {
-	$value: linear 0.3s;
-	
-	@each $prefix in $vendor-prefixes {
-		#{$prefix}transition: CreateTransitionValueString($properties, $value);
-	}
-}
-
-@mixin transition ($value...) {
-	@each $prefix in $vendor-prefixes {
-		#{$prefix}transition: $value;
-	}
-}
-@mixin transform  ($value...) {@each $prefix in $vendor-prefixes {#{$prefix}transform:  $value;}}
 
 @mixin std-wrapper ($wrapper-width: 100%) {
 	width: $wrapper-width;
+	height: 100%;
 	margin: auto;
 }
 
 @mixin std-container ($container-width, $container-bgcolor, $container-shadow) {
 	width: $container-width;
+	height: 100%;
 	display: flex;
 	background-color: $container-bgcolor;
 	box-shadow: $container-shadow;

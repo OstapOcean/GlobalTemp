@@ -14,7 +14,8 @@
 }
 
 // Создает строку значений для свойства transition
-@function CreateTransitionValueString ($properties, $value) {
+
+@function CreateTransitionValueString ($value, $properties) {
 	$string: null;
 	
 	@each $property in $properties {

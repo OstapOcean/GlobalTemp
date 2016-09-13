@@ -1,0 +1,232 @@
+/* ~~~~~~~~~~~~~~~ *\
+|* Form elements ~ *|
+\* ~~~~~~~~~~~~~~~ */
+
+/* COMMON */
+
+// Code
+
+
+
+
+
+
+/* LARGE */
+@media screen and (min-width: $site-width-max-lrg) {
+	
+	form {
+		width: 100%;
+		height: 100%;
+	}
+	
+	input {
+		margin-bottom: 15px;
+		border: none;
+		outline: none;
+		
+		font-family: inherit;
+		font-size: inherit;
+		
+		&:focus {
+			outline: none;
+			border: none;
+		}
+		
+		&[type="text"], 
+		&[type="password"],
+		&[type="url"],
+		&[type="search"],
+		&[type="tel"],
+		&[type="email"],
+		&[type="number"],
+		&[type="time"],
+		&[type="week"],
+		&[type="month"],
+		&[type="date"],
+		&[type="datetime"],
+		&[type="datetime-local"]
+		{
+			width: 100%;
+			height: 30px;
+			padding: 0;
+			padding-left: 5px;
+			//margin-bottom: 15px;
+			border-color: $color-border-basic;
+			border-style: solid;
+			border-width: 1px;
+			background-color: $color-third-basic;
+			color: $color-border-basic;
+			box-shadow: $std-shadow;
+
+			@include transition(linear 0.2s, border-color, background-color, color);
+			
+			&:hover {
+				border-color: $color-border-hover;
+				background-color: $color-third-hover;
+				color: $color-border-hover;
+
+				@include transition(linear 0.2s, border-color, background-color, color);
+			}
+			&:active {
+				border-color: $color-border-active;
+				background-color: $color-third-active;
+				color: $color-border-active;
+
+				@include transition(linear 0.2s, border-color, background-color, color);
+			}
+			&:focus {
+				border-color: $color-border-focus;
+				background-color: $color-third-focus;
+				color: $color-border-focus;
+
+				@include transition(linear 0.2s, border-color, background-color, color);
+			}
+		}
+		
+		&[type="button"],
+		&[type="image"],
+		&[type="submit"]
+		{
+			width: 140px;
+			height: 35px;
+			margin: auto;
+			margin-bottom: 15px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: $color-first-basic - #2f0000;
+			background-color: $color-first-basic;
+			font-size: 14px;
+			color: $color-second-basic;
+			box-shadow: $std-shadow;
+			
+			@include transition(linear 0.1s, background-color);
+			
+			&:hover {
+				border-color: $color-first-hover - #2f0000;
+				background-color: $color-first-hover;
+				cursor: pointer;
+				
+				@include transition(linear 0.1s, background-color);
+			}
+			&:active {
+				border-color: $color-first-active - #2f0000;
+				background-color: $color-first-active;
+				
+				@include transition(linear 0.1s, background-color);
+			}
+			&:focus {
+				border-color: $color-first-focus - #2f0000;
+				background-color: $color-first-focus;
+				
+				@include transition(linear 0.1s, background-color);
+			}
+		}
+		
+		&[type="radio"],
+		&[type="checkbox"],
+		&[type="file"],
+		&[type="button"],
+		&[type="image"],
+		&[type="submit"],
+		&[type="reset"],
+		&[type="color"],
+		&[type="range"]
+		{
+			&:hover {
+				cursor: pointer;
+			}
+		}
+		
+		
+		
+		&[type="text"] {
+			
+		}
+		&[type="password"] {
+			
+		}
+		&[type="radio"] {
+			
+		}
+		&[type="checkbox"] {
+			
+		}
+		&[type="file"] {
+			
+		}
+		&[type="image"] {
+			
+		}
+		&[type="button"] {
+			
+		}
+		&[type="submit"] {
+			
+		}
+		&[type="reset"] {
+			
+		}
+		&[type="hidden"] {
+			
+		}
+		
+		/* HTML 5 */
+		
+		&[type="color"] {
+			
+		}
+		&[type="url"] {
+			
+		}
+		&[type="search"] {
+			
+		}
+		&[type="tel"] {
+			
+		}
+		&[type="email"] {
+			
+		}
+		&[type="number"] {
+			
+		}
+		&[type="range"] {
+			
+			&:hover {
+				cursor: grab;
+			}
+			&:active {
+				cursor: grabbing;
+			}
+			&:focus {
+
+			}
+		}
+		&[type="time"] {
+			
+		}
+		&[type="week"] {
+			
+		}
+		&[type="month"] {
+			
+		}
+		&[type="date"] {
+			
+		}
+		&[type="datetime"] {
+			
+		}
+		&[type="datetime-local"] {
+			
+		}
+		
+	}
+	
+	button {
+		
+	}
+	
+	
+	
+}

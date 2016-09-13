@@ -22,39 +22,60 @@ $site-footer-width: 100%;
 	width: 100%;
 }
 
+.header-content {
+	
+}
+
+.main-content {
+	.row {
+		max-width: $site-width-max-lrg;
+	}
+}
+
+.footer-content {
+	
+}
+
 .row {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 
-	&.content-align-left   {justify-content: flex-start;}
-	&.content-align-center {justify-content: center;}
-	&.content-align-right  {justify-content: flex-end;}
-	&.content-align-top    {align-items: flex-start;}
-	&.content-align-middle {align-items: center;}
-	&.content-align-bottom {align-items: flex-end;}
+	&.content-align-left    {justify-content: flex-start;}
+	&.content-align-center  {justify-content: center;}
+	&.content-align-right   {justify-content: flex-end;}
+	&.content-align-top     {align-items: flex-start;}
+	&.content-align-middle  {align-items: flex-start;}
+	&.content-align-bottom  {align-items: flex-end;}
+	&.content-align-stretch {align-items: stretch;}
 	
-	&.inner {
-		margin-bottom: -$site-margin-lrg;
+	&.area > [class*="column"] {
+		max-width: 1200px;
 	}
+	
+	&.fullwidth {max-width: none;}
 }
 
-@for $i from 1 through 12 {
+@for $i from 0 through 12 {
     .column-#{$i} {
         width: calc((#{$i} / 12) * (100% + #{$site-margin-lrg}) - #{$site-margin-lrg});
 		// width: calc((#{$i} / 12) * 100%);
-        margin-left: $site-margin-lrg;
-		margin-bottom: $site-margin-lrg;
-        
-        &:first-child {
-	        margin-left: 0;
-        }
-		
-		&.first {
-			margin-left: 0;
-		}
     }
 }
 
+[class*="column"] {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	flex-wrap: wrap;
+	
+	&.content-align-left   {align-items: flex-start;}
+	&.content-align-center {align-items: center;}
+	&.content-align-right  {align-items: flex-end;}
+	&.content-align-top    {justify-content: flex-start;}
+	&.content-align-middle {justify-content: center;}
+	&.content-align-bottom {justify-content: flex-end;}
+}

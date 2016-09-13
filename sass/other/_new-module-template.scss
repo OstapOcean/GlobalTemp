@@ -1,6 +1,6 @@
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *\
-|* Module name ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Module name *|
-\* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~ *\
+|* Module name ~ *|
+\* ~~~~~~~~~~~~~ */
 
 /* COMMON */
 
@@ -12,7 +12,7 @@
 
 
 /* LARGE */
-@media screen and (min-width: $site-lrg-width-min) {
+@media screen and (min-width: $site-width-max-lrg) {
 	
 	
 	
@@ -23,7 +23,7 @@
 
 
 /* MEDIUM */
-@media screen and (min-width: $site-mdm-width-min) and (max-width: $site-mdm-width-max) {
+@media screen and (min-width: $site-width-min-mdm) and (max-width: $site-width-max-mdm) {
 	
 	
 	
@@ -34,7 +34,7 @@
 
 
 /* SMALL */
-@media screen and (max-width: $site-sml-width-max) {
+@media screen and (max-width: $site-width-max-sml) {
 	
 	
 	
